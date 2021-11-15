@@ -1,7 +1,5 @@
 FROM openjdk:8u302-jdk
-
-EXPOSE 8080
-
-ADD ./build/libs/ /qna-0.0.1-SNAPSHOT.jar
-
-ENTRYPOINT ["java", "-jar", "/qna-0.0.1-SNAPSHOT.jar"]
+VOLUME /tmp
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
