@@ -2,33 +2,25 @@ version: '2.1'
 
 services:
   auth:
-    build:
-      context: auth
-      dockerfile: Dockerfile
+    build: auth
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   vendor:
-    build:
-      context: vendor
-      dockerfile: Dockerfile
+    build: vendor
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   front:
-    build:
-      context: front
-      dockerfile: Dockerfile
+    build: front
     mem_limit: 350m
     ports:
       - "80:80"
 
   chat:
-    build:
-      context: chat
-      dockerfile: Dockerfile
+    build: chat
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -37,39 +29,29 @@ services:
         condition: service_started
 
   qna:
-    build:
-      context: qna
-      dockerfile: Dockerfile
+    build: qna
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   review:
-    build:
-      context: review
-      dockerfile: Dockerfile
+    build: review
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   notice:
-    build:
-      context: notice
-      dockerfile: Dockerfile
+    build: notice
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   eureka:
-    build:
-      context: eureka
-      dockerfile: Dockerfile
+    build: eureka
     mem_limit: 350m
 
   gateway:
-    build:
-      context: gateway
-      dockerfile: Dockerfile
+    build: gateway
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
