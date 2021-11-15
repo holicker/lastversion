@@ -4,21 +4,16 @@ import com.spreadmat.qna.domain.Qna;
 import com.spreadmat.qna.service.QnaService;
 import com.spreadmat.qna.web.rest.dto.QnaDTO;
 import com.spreadmat.qna.web.rest.mapper.QnaMapper;
-import javafx.util.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.stream.IntStream;
 
 @Slf4j
 @RestController()
