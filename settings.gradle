@@ -1,0 +1,8 @@
+include ':eureka'
+include ':vendor'
+include ':gateway'
+include ':auth'
+include ':chat'
+include ':qna'
+include ':notice'
+include ':review'
