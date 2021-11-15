@@ -1,7 +1,5 @@
-FROM openjdk:8u302-jdk
-
-EXPOSE 8080
-
-ADD ./build/libs/ gateway-0.0.1-SNAPSHOT.jar
-
-ENTRYPOINT ["java", "-jar", "/gateway-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE=build/libs/gateway-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
