@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.baseURL = "http://localhost/api";
+axios.defaults.baseURL = "http://ip-172-31-36-36.ap-northeast-2.compute.internal/api";
 const client = axios.create();
 /*
   글로벌 설정 예시:
